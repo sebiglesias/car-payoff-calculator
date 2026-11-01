@@ -1,0 +1,15 @@
+{
+  "name": "Car Loan Early Payoff Calculator \u2014 Extra Payments & Interest Saved",
+  "short_name": "car-payoff-calculator",
+  "start_url": "https://sebiglesias.com.ar/car-payoff-calculator/",
+  "display": "standalone",
+  "background_color": "#0e0d0b",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Loan Early Payoff Calculator — Extra Payments & Interest Saved</title>
+<meta name="description" content="Calculate how much interest you save and how many months earlier you become debt-free by making extra monthly or lump-sum payments on your auto loan.">
+<link rel="canonical" href="https://sebiglesias.com.ar/car-payoff-calculator/">
+<meta name="theme-color" content="#10b981">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2BNDBQP0W7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2BNDBQP0W7');
+</script>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Car Loan Early Payoff Calculator — Extra Payments & Interest Saved">
+<meta property="og:description" content="Calculate how much interest you save and how many months earlier you become debt-free by making extra monthly or lump-sum payments on your auto loan.">
+<meta property="og:url" content="https://sebiglesias.com.ar/car-payoff-calculator/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Car Loan Early Payoff Calculator — Extra Payments & Interest Saved">
+<meta name="twitter:description" content="Calculate how much interest you save and how many months earlier you become debt-free by making extra monthly or lump-sum payments on your auto loan.">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<meta name="google-adsense-account" content="ca-pub-3381238987477190">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3381238987477190" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Car Loan Early Payoff Calculator \u2014 Extra Payments & Interest Saved",
+    "description": "Calculate how much interest you save and how many months earlier you become debt-free by making extra monthly or lump-sum payments on your auto loan.",
+    "url": "https://sebiglesias.com.ar/car-payoff-calculator/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does making extra payments go directly to principal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but you must ensure your auto loan servicer applies extra funds specifically toward the 'Principal' balance rather than treating it as prepaying the next month's interest."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a penalty for paying off a car loan early?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most modern US auto loans (from banks, credit unions, and captives like Toyota Financial or Ford Credit) have no prepayment penalties, but check your contract for 'Rule of 78s' or precomputed interest terms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I pay off my car loan early or invest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Compare your APR to current risk-free rates. If your auto APR is above 6-7%, paying it off delivers a guaranteed, tax-free return equal to your interest rate."
+        }
+      }
+    ]
+  }
+]
+</script>
+</head>
+<body>
+<div class="container">
+  
+    <header>
+      <span class="badge">Auto Loan Optimization</span>
+      <h1>Car Loan Early Payoff Calculator</h1>
+      <p class="subtitle">Calculate how much interest you save and how many months you shave off your auto loan with extra principal payments.</p>
+    </header>
+    <div class="grid">
+      <div class="card">
+        <h2>Loan Details</h2>
+        <div class="form-group">
+          <label for="balance">Current Loan Balance <span>USD</span></label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="balance" class="has-prefix" value="18500" min="500" max="150000" step="100">
+          </div>
+          <input type="range" id="balanceRange" min="1000" max="60000" step="500" value="18500">
+        </div>
+        <div class="form-group">
+          <label for="rate">Interest Rate (APR) <span>%</span></label>
+          <div class="input-wrapper">
+            <input type="number" id="rate" class="has-suffix" value="7.25" min="0.1" max="30" step="0.05">
+            <span class="input-suffix">%</span>
+          </div>
+          <input type="range" id="rateRange" min="1" max="20" step="0.1" value="7.25">
+        </div>
+        <div class="form-group">
+          <label for="payment">Current Monthly Payment <span>USD</span></label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="payment" class="has-prefix" value="450" min="50" max="5000" step="10">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="extra">Extra Monthly Payment (Principal) <span>USD</span></label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="extra" class="has-prefix" value="100" min="0" max="3000" step="25">
+          </div>
+          <input type="range" id="extraRange" min="0" max="1000" step="25" value="100">
+        </div>
+      </div>
+      <div class="card">
+        <h2>Savings & Payoff Summary</h2>
+        <div class="kpi-grid">
+          <div class="kpi-card highlight">
+            <div class="kpi-label">Interest Saved</div>
+            <div class="kpi-value green" id="interestSaved">$0</div>
+          </div>
+          <div class="kpi-card highlight">
+            <div class="kpi-label">Time Saved</div>
+            <div class="kpi-value accent" id="timeSaved">0 mo</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Total Interest (Extra)</div>
+            <div class="kpi-value" id="newInterest">$0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Original Interest</div>
+            <div class="kpi-value" id="origInterest">$0</div>
+          </div>
+        </div>
+        <div style="background: var(--bg-card-inner); padding: 1rem; border-radius: var(--radius-md); font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+          <p id="summaryText">Calculating...</p>
+        </div>
+        <button class="btn" style="margin-top: 1rem;" id="copyBtn">📋 Copy Payoff Schedule</button>
+      </div>
+    </div>
+    
+
+  <section class="faq-section">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    
+        <div class="faq-item">
+          <h3>Does making extra payments go directly to principal?</h3>
+          <p>Yes, but you must ensure your auto loan servicer applies extra funds specifically toward the 'Principal' balance rather than treating it as prepaying the next month's interest.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is there a penalty for paying off a car loan early?</h3>
+          <p>Most modern US auto loans (from banks, credit unions, and captives like Toyota Financial or Ford Credit) have no prepayment penalties, but check your contract for 'Rule of 78s' or precomputed interest terms.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Should I pay off my car loan early or invest?</h3>
+          <p>Compare your APR to current risk-free rates. If your auto APR is above 6-7%, paying it off delivers a guaranteed, tax-free return equal to your interest rate.</p>
+        </div>
+  </section>
+
+  <div class="cross-links">
+    <a href="https://sebiglesias.com.ar/car-payoff-calculator/">🚗 Car Payoff</a>
+    <a href="https://sebiglesias.com.ar/credit-card-payoff/">💳 Credit Card Payoff</a>
+    <a href="https://sebiglesias.com.ar/insurance-deductible/">🛡️ Insurance Deductible</a>
+    <a href="https://sebiglesias.com.ar/rent-vs-buy-calculator/">🏡 Rent vs Buy</a>
+    <a href="https://sebiglesias.com.ar/concrete-calculator/">🧱 Concrete Calculator</a>
+    <a href="https://sebiglesias.com.ar/moving-truck-calculator/">📦 Moving Truck</a>
+    <a href="https://sebiglesias.com.ar/ac-btu-calculator/">❄️ AC BTU Sizing</a>
+    <a href="https://sebiglesias.com.ar/mulch-calculator/">🌱 Mulch Calculator</a>
+    <a href="https://sebiglesias.com.ar/salary-to-hourly/">💼 Salary to Hourly</a>
+    <a href="https://sebiglesias.com.ar/paint-calculator/">🎨 Paint Calculator</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Free Web Utility. Created by <a href="https://sebiglesias.com.ar">Sebastián Iglesias</a>. Free & Fast.</p>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
