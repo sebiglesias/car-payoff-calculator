@@ -6,6 +6,17 @@
 <title>Car Loan Early Payoff Calculator — Extra Payments & Interest Saved</title>
 <meta name="description" content="Calculate how much interest you save and how many months earlier you become debt-free by making extra monthly or lump-sum payments on your auto loan.">
 <link rel="canonical" href="https://sebiglesias.com.ar/car-payoff-calculator/">
+  <link rel="alternate" hreflang="en" href="https://sebiglesias.com.ar/car-payoff-calculator/">
+  <link rel="alternate" hreflang="es" href="https://sebiglesias.com.ar/car-payoff-calculator/?lang=es">
+  <link rel="alternate" hreflang="de" href="https://sebiglesias.com.ar/car-payoff-calculator/?lang=de">
+  <link rel="alternate" hreflang="fr" href="https://sebiglesias.com.ar/car-payoff-calculator/?lang=fr">
+  <link rel="alternate" hreflang="it" href="https://sebiglesias.com.ar/car-payoff-calculator/?lang=it">
+  <link rel="alternate" hreflang="pt" href="https://sebiglesias.com.ar/car-payoff-calculator/?lang=pt">
+  <link rel="alternate" hreflang="nl" href="https://sebiglesias.com.ar/car-payoff-calculator/?lang=nl">
+  <link rel="alternate" hreflang="sv" href="https://sebiglesias.com.ar/car-payoff-calculator/?lang=sv">
+  <link rel="alternate" hreflang="da" href="https://sebiglesias.com.ar/car-payoff-calculator/?lang=da">
+  <link rel="alternate" hreflang="pl" href="https://sebiglesias.com.ar/car-payoff-calculator/?lang=pl">
+  <link rel="alternate" hreflang="x-default" href="https://sebiglesias.com.ar/car-payoff-calculator/">
 <meta name="theme-color" content="#10b981">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
@@ -89,6 +100,18 @@
 <div class="container">
   
     <header>
+<div style='display:flex;justify-content:flex-end;margin-bottom:.5rem'><select id="lang-select" aria-label="Language" style="background:#24221C;border:1px solid rgba(242,239,230,.18);color:#F2EFE6;font-family:'JetBrains Mono',monospace;font-size:.72rem;padding:3px 6px;border-radius:3px;cursor:pointer;margin-left:auto">
+  <option value="en">🇺🇸 EN</option>
+  <option value="es">🇪🇸 ES</option>
+  <option value="de">🇩🇪 DE</option>
+  <option value="fr">🇫🇷 FR</option>
+  <option value="it">🇮🇹 IT</option>
+  <option value="pt">🇵🇹 PT</option>
+  <option value="nl">🇳🇱 NL</option>
+  <option value="sv">🇸🇪 SV</option>
+  <option value="da">🇩🇰 DA</option>
+  <option value="pl">🇵🇱 PL</option>
+</select></div>
       <span class="badge">Auto Loan Optimization</span>
       <h1>Car Loan Early Payoff Calculator</h1>
       <p class="subtitle">Calculate how much interest you save and how many months you shave off your auto loan with extra principal payments.</p>
@@ -277,5 +300,41 @@
 </div>
 
 <script src="app.js"></script>
+
+<script>
+/* I18N_AUTO_ENGINE */
+(function(){
+  const DICT = {"en": {"title": "Auto Loan Early Payoff Calculator<span class='accent'>.</span>", "sub": "See how extra monthly payments slash car loan interest & months"}, "es": {"title": "Calculadora Cancelación Anticipada Auto<span class='accent'>.</span>", "sub": "Ahorro de intereses y meses al adelantar cuotas del préstamo automotor"}, "de": {"title": "Autokredit Sondertilgungsrechner<span class='accent'>.</span>", "sub": "Zinsen sparen und Laufzeit verkürzen durch monatliche Zusatzzahlungen"}, "fr": {"title": "Calculateur Remboursement Anticipé Auto<span class='accent'>.</span>", "sub": "Économisez des intérêts et réduisez la durée de votre crédit voiture"}, "it": {"title": "Calcolatore Estinzione Anticipata Auto<span class='accent'>.</span>", "sub": "Risparmio interessi e mesi con versamenti extra sul prestito auto"}, "pt": {"title": "Calculadora Amortização Financiamento Auto<span class='accent'>.</span>", "sub": "Economia de juros e parcelas ao antecipar pagamentos do veículo"}, "nl": {"title": "Autolening Extra Aflossen Calculator<span class='accent'>.</span>", "sub": "Bereken rentebesparing en kortere looptijd bij extra aflossingen"}, "sv": {"title": "Billån Extra Amortering Kalkylator<span class='accent'>.</span>", "sub": "Se hur mycket ränta och tid du sparar genom extra inbetalningar"}, "da": {"title": "Billån Ekstra Afdrag Beregner<span class='accent'>.</span>", "sub": "Beregn rentebesparelse og kortere løbetid ved ekstra betalinger"}, "pl": {"title": "Kalkulator Nadpłaty Kredytu Samochodowego<span class='accent'>.</span>", "sub": "Sprawdź ile odsetek i miesięcy zaoszczędzisz nadpłacając raty auta"}};
+  const h1El = document.querySelector('h1');
+  const subEl = document.querySelector('.sub') || document.querySelector('header p');
+  const selEl = document.getElementById('lang-select');
+  function applyLang(lang) {
+    const entry = DICT[lang] || DICT.en;
+    document.documentElement.lang = lang;
+    if (h1El && entry.title) h1El.innerHTML = entry.title;
+    if (subEl && entry.sub) subEl.textContent = entry.sub;
+    if (lang !== 'en' && entry.sub) {
+      document.title = (h1El ? h1El.textContent : '') + ' — ' + entry.sub;
+    }
+  }
+  const params = new URLSearchParams(window.location.search);
+  const init = params.get('lang') || localStorage.getItem('car-payoff-calculator-lang') || 'en';
+  const valid = DICT[init] ? init : 'en';
+  if (selEl) {
+    selEl.value = valid;
+    selEl.addEventListener('change', function(e) {
+      const nl = e.target.value;
+      localStorage.setItem('car-payoff-calculator-lang', nl);
+      const u = new URL(window.location.href);
+      if (nl === 'en') u.searchParams.delete('lang');
+      else u.searchParams.set('lang', nl);
+      window.history.replaceState({}, '', u);
+      applyLang(nl);
+    });
+  }
+  applyLang(valid);
+})();
+</script>
+
 </body>
 </html>
